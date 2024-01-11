@@ -76,19 +76,61 @@
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="form-group form-group--flex">
+                                <div class="row justify-content-between">
+                                    <div class="col-3">
+                                        <h:outputText
+                                            styleClass="form-group__label"
+                                            value="#{msgs.plugin_metadata_createElements_numberOfImages}"
+                                            title="#{msgs.plugin_metadata_createElements_numberOfImages}" />
 
+                                    </div>
+                                    <div class="col-9">
+                                        <h:inputText
+                                            value="#{Metadaten.extension.numberOfImages}"
+                                            styleClass="form-control" />
+                                    </div>
+                                </div>
                             </div>
 
-                                element type selection, list all available sub elements of the main element (with a configurable default value)
+                            <div class="form-group form-group--flex">
+                                <div class="row justify-content-between">
+                                    <div class="col-3">
+                                        <h:outputText
+                                            styleClass="form-group__label"
+                                            value="#{msgs.plugin_metadata_createElements_generateTitle}"
+                                            title="#{msgs.plugin_metadata_createElements_generateTitle}" />
 
-                                <br />
-                                option to select after which number of images a new element should be created (with a configurable default value)
-                                <br />
+                                    </div>
+                                    <div class="col-9">
 
-                                option to select title generation based on filename (toggle checkbox)
-                                <br />
+                                        <h:selectBooleanCheckbox
+                                            styleClass="form-control"
+                                            value="#{Metadaten.extension.generateTitleFromFilename}" />
+                                    </div>
+                                </div>
+                            </div>
 
-                                buttons to execute or cancel
+                            <div class="row">
+                                <div class="col-auto mr-auto"></div>
+                                <div class="col-auto">
+                                    <button
+                                        jsf:id="cancelMetadata"
+                                        class="btn btn--gray"
+                                        jsf:immediate="false"
+                                        type="button">#{msgs.abbrechen}</button>
+                                    <h:commandButton
+                                        id="absenden"
+                                        styleClass="btn btn--gray"
+                                        type="submit"
+                                        action="#{Metadaten.addNewMetadata}"
+                                        value="#{msgs.add}"
+                                        role="button">
+                                    </h:commandButton>
+                                </div>
+                            </div>
+
                         </h:form>
                     </h:panelGroup>
 

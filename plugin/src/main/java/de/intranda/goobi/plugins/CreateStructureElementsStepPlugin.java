@@ -43,6 +43,13 @@ public class CreateStructureElementsStepPlugin implements IMetadataEditorExtensi
     @Getter
     private SortedMap<String, DocStructType> docTypeMap;
 
+    @Getter
+    @Setter
+    private int numberOfImages;
+
+    @Getter
+    @Setter
+    private boolean generateTitleFromFilename;
 
     @Override
     public void initializePlugin(Metadaten bean) {
@@ -51,6 +58,9 @@ public class CreateStructureElementsStepPlugin implements IMetadataEditorExtensi
 
         // TODO get from config
         String configuredDefaultType = "";
+        //        numberOfImages = config.getInt("");
+
+
 
         DocStruct logical =  bean.getDocument().getLogicalDocStruct();
         if (logical.getType().isAnchor()) {
