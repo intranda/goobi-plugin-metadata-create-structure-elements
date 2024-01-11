@@ -17,7 +17,7 @@
         <!-- MODAL -->
         <h:panelGroup
             layout="block"
-            id="changeTypeModal"
+            id="creationModal"
             styleClass="modal fade"
             tabindex="-1"
             role="dialog"
@@ -54,25 +54,30 @@
                                     <div class="col-3">
                                         <h:outputText
                                             styleClass="form-group__label"
-                                            value="#{msgs.plugin_metadata_changeTemplate_selectTemplate}"
-                                            title="#{msgs.plugin_metadata_changeTemplate_selectTemplate}" />
+                                            value="#{msgs.plugin_metadata_createElements_selectType}"
+                                            title="#{msgs.plugin_metadata_createElements_selectType}" />
 
                                     </div>
                                     <div class="col-9">
+                                        <div class="form-control form-control--select">
+                                            <h:selectOneMenu
+                                                id="tempate"
+                                                value="#{Metadaten.extension.selectedType}">
+                                                <f:selectItem
+                                                    itemValue="null"
+                                                    itemLabel="#{msgs.bitteAuswaehlen}" />
+                                                <f:selectItems
+                                                    value="#{Metadaten.extension.docTypeMap.entrySet()}"
+                                                    var="entry"
+                                                    itemValue="#{entry.value}"
+                                                    itemLabel="#{entry.key}" />
 
-                                        <!--                                       <h:selectOneMenu -->
-                                        <!--                                                 id="tempate" -->
-                                        <!--                                                 value="#{Metadaten.extension.selectedTemplate}"> -->
-                                        <!--                                                 <f:selectItem -->
-                                        <!--                                                     itemValue="null" -->
-                                        <!--                                                     itemLabel="#{msgs.bitteAuswaehlen}" /> -->
-                                        <!--                                                 <f:selectItems value="#{Metadaten.extension.metadataTemplates}" /> -->
-                                        <!--                                             </h:selectOneMenu> -->
-
+                                            </h:selectOneMenu>
+                                        </div>
                                     </div>
                                 </div>
-                                
-                                </div>
+
+                            </div>
 
                                 element type selection, list all available sub elements of the main element (with a configurable default value)
 

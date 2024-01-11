@@ -77,7 +77,7 @@ public class CreateStructureElementsPluginTest {
     public void testModalId() {
         CreateStructureElementsStepPlugin plugin = new CreateStructureElementsStepPlugin();
         assertNotNull(plugin);
-        assertEquals("createStructureElements", plugin.getModalId());
+        assertEquals("creationModal", plugin.getModalId());
     }
 
     @Test
