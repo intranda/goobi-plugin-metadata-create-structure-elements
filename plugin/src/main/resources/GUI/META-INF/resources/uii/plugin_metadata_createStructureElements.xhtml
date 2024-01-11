@@ -1,0 +1,95 @@
+<ui:composition
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+    xmlns:intranda="http://xmlns.jcp.org/jsf/composite/composites"
+    xmlns:composite="http://xmlns.jcp.org/jsf/composite"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:c="http://java.sun.com/jsp/jstl/core"
+    xmlns:x="http://myfaces.apache.org/tomahawk"
+    xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+    xmlns:jsf="http://xmlns.jcp.org/jsf">
+
+    <composite:interface>
+    </composite:interface>
+
+    <composite:implementation>
+        <!-- MODAL -->
+        <h:panelGroup
+            layout="block"
+            id="changeTypeModal"
+            styleClass="modal fade"
+            tabindex="-1"
+            role="dialog"
+            aria-hidden="true">
+            <div
+                class="modal-dialog"
+                role="document">
+                <h:panelGroup
+                    id="creationModalContent"
+                    layout="block"
+                    styleClass="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title">#{msgs[Metadaten.extension.title]}</h1>
+                        <button
+                            type="button"
+                            class="close"
+                            data-dismiss="modal"
+                            aria-label="Close">
+                            <span aria-hidden="true">
+                                <h:outputText
+                                    value="&amp;times;"
+                                    escape="false" />
+                            </span>
+                        </button>
+                    </div>
+
+                    <h:panelGroup
+                        layout="block"
+                        styleClass="modal-body"
+                        rendered="#{Metadaten.extension.title == 'intranda_metadata_createStructureElements'}">
+                        <h:form styleClass="form-horizontal form-bordered">
+                            <div class="form-group form-group--flex">
+                                <div class="row justify-content-between">
+                                    <div class="col-3">
+                                        <h:outputText
+                                            styleClass="form-group__label"
+                                            value="#{msgs.plugin_metadata_changeTemplate_selectTemplate}"
+                                            title="#{msgs.plugin_metadata_changeTemplate_selectTemplate}" />
+
+                                    </div>
+                                    <div class="col-9">
+
+                                        <!--                                       <h:selectOneMenu -->
+                                        <!--                                                 id="tempate" -->
+                                        <!--                                                 value="#{Metadaten.extension.selectedTemplate}"> -->
+                                        <!--                                                 <f:selectItem -->
+                                        <!--                                                     itemValue="null" -->
+                                        <!--                                                     itemLabel="#{msgs.bitteAuswaehlen}" /> -->
+                                        <!--                                                 <f:selectItems value="#{Metadaten.extension.metadataTemplates}" /> -->
+                                        <!--                                             </h:selectOneMenu> -->
+
+                                    </div>
+                                </div>
+                                
+                                </div>
+
+                                element type selection, list all available sub elements of the main element (with a configurable default value)
+
+                                <br />
+                                option to select after which number of images a new element should be created (with a configurable default value)
+                                <br />
+
+                                option to select title generation based on filename (toggle checkbox)
+                                <br />
+
+                                buttons to execute or cancel
+                        </h:form>
+                    </h:panelGroup>
+
+
+                </h:panelGroup>
+            </div>
+        </h:panelGroup>
+    </composite:implementation>
+</ui:composition>
