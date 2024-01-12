@@ -62,29 +62,33 @@ public class CreateStructureElementsPluginTest {
 
     @Test
     public void testConstructor() throws Exception {
-        CreateStructureElementsStepPlugin plugin = new CreateStructureElementsStepPlugin();
+        CreateStructureElementsPlugin plugin = new CreateStructureElementsPlugin();
         assertNotNull(plugin);
     }
 
     @Test
     public void testTitle() {
-        CreateStructureElementsStepPlugin plugin = new CreateStructureElementsStepPlugin();
+        CreateStructureElementsPlugin plugin = new CreateStructureElementsPlugin();
         assertNotNull(plugin);
         assertEquals("intranda_metadata_createStructureElements", plugin.getTitle());
     }
 
     @Test
     public void testModalId() {
-        CreateStructureElementsStepPlugin plugin = new CreateStructureElementsStepPlugin();
+        CreateStructureElementsPlugin plugin = new CreateStructureElementsPlugin();
         assertNotNull(plugin);
         assertEquals("creationModal", plugin.getModalId());
     }
 
     @Test
     public void testPagePath() {
-        CreateStructureElementsStepPlugin plugin = new CreateStructureElementsStepPlugin();
+        CreateStructureElementsPlugin plugin = new CreateStructureElementsPlugin();
         assertNotNull(plugin);
         assertEquals("/uii/plugin_metadata_createStructureElements.xhtml", plugin.getPagePath());
+    }
+
+    private void mockMetadataBean() {
+
     }
 
     public Process getProcess() {

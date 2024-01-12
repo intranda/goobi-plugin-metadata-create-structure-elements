@@ -36,8 +36,7 @@
                             class="close"
                             data-dismiss="modal"
                             aria-label="Close">
-                            <span aria-hidden="true">
-                                <h:outputText
+                            <span aria-hidden="true"> <h:outputText
                                     value="&amp;times;"
                                     escape="false" />
                             </span>
@@ -69,7 +68,7 @@
                                                 <f:selectItems
                                                     value="#{Metadaten.extension.docTypeMap.entrySet()}"
                                                     var="entry"
-                                                    itemValue="#{entry.value}"
+                                                    itemValue="#{entry.key}"
                                                     itemLabel="#{entry.key}" />
 
                                             </h:selectOneMenu>
@@ -116,17 +115,18 @@
                                 <div class="col-auto mr-auto"></div>
                                 <div class="col-auto">
                                     <button
-                                        jsf:id="cancelMetadata"
                                         class="btn btn--gray"
-                                        jsf:immediate="false"
+                                        data-dismiss="modal"
                                         type="button">#{msgs.abbrechen}</button>
+
                                     <h:commandButton
                                         id="absenden"
                                         styleClass="btn btn--gray"
                                         type="submit"
-                                        action="#{Metadaten.addNewMetadata}"
-                                        value="#{msgs.add}"
-                                        role="button">
+                                        action="#{Metadaten.extension.generateElements}"
+                                        value="#{msgs.plugin_metadata_createElements_generateElements}"
+                                        role="button"
+                                        style="margin-left: 10px;">
                                     </h:commandButton>
                                 </div>
                             </div>
