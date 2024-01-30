@@ -73,6 +73,17 @@ public class CreateStructureElementsPlugin implements IMetadataEditorExtension {
     public void initializePlugin(Metadaten bean) {
         docTypeMap = new TreeMap<>();
         this.bean = bean;
+
+        digitalDocument = bean.getDocument();
+
+        physical = digitalDocument.getPhysicalDocStruct();
+        logical = digitalDocument.getLogicalDocStruct();
+        if (logical.getType().isAnchor()) {
+            logical = logical.getAllChildren().get(0);
+        }
+
+        String docstructType = logical.getType().getName();
+
         // read default values from configuration
         XMLConfiguration xml = ConfigPlugins.getPluginConfig(title);
         xml.setExpressionEngine(new XPathExpressionEngine());
@@ -80,29 +91,31 @@ public class CreateStructureElementsPlugin implements IMetadataEditorExtension {
         String projectName = bean.getMyProzess().getProjekt().getTitel();
         SubnodeConfiguration config = null;
         try {
-            // first try to find a block for the current project
-            config = xml.configurationAt("//config[project = '" + projectName + "']");
+            // first try to find a block for the current project and docstruct
+            config = xml.configurationAt("//config[project = '" + projectName + "'][doctype = '" + docstructType + "']");
         } catch (IllegalArgumentException e) {
             try {
-                // then try to find a default configuration
-                config = xml.configurationAt("//config[project = '*']");
+                // if not configured, check for project and any docstruct
+                config = xml.configurationAt("//config[project = '" + projectName + "'][doctype = '*']");
             } catch (IllegalArgumentException e1) {
-                // abort, if no config found
-                log.info("No configuration file found, abort");
-                throw e1;
+                try {
+                    // if not configured, check for the docstruct in any project
+                    config = xml.configurationAt("//config[project = '*'][doctype = '" + docstructType + "']");
+                } catch (IllegalArgumentException e2) {
+                    try {
+                        // then try to find a default configuration
+                        config = xml.configurationAt("//config[project = '*'][doctype = '*']");
+                    } catch (IllegalArgumentException e3) {
+                        // abort, if no config found
+                        log.info("No configuration file found, abort");
+                        throw e;
+                    }
+                }
             }
         }
 
         String configuredDefaultType = config.getString("/defaultType", "");
         numberOfImages = config.getInt("/numberOfImagesPerElement", 1);
-
-        digitalDocument = bean.getDocument();
-
-        logical = digitalDocument.getLogicalDocStruct();
-        if (logical.getType().isAnchor()) {
-            logical = logical.getAllChildren().get(0);
-        }
-        physical = digitalDocument.getPhysicalDocStruct();
 
         log.trace("type: {}", logical.getType().getName());
 
