@@ -2,9 +2,9 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>io.goobi.workflow.plugin</groupId>
-    <artifactId>plugin-step-create-structure-elements</artifactId>
+    <artifactId>plugin-metadataeditor-create-structure-elements</artifactId>
     <version>24.06-SNAPSHOT</version>
   </parent>
-  <artifactId>plugin-step-create-structure-elements-base</artifactId>
+  <artifactId>plugin-metadataeditor-create-structure-elements-base</artifactId>
   <packaging>jar</packaging>
 </project>
