@@ -7,7 +7,7 @@
     <relativePath />
   </parent>
   <groupId>io.goobi.workflow.plugin</groupId>
-  <artifactId>plugin-metadataeditor-create-structure-elements</artifactId>
+  <artifactId>plugin-metadata-create-structure-elements</artifactId>
   <packaging>pom</packaging>
   <modules>
     <module>module-base</module>
