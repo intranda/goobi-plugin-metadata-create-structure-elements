@@ -3,11 +3,11 @@
   <parent>
     <groupId>io.goobi.workflow</groupId>
     <artifactId>workflow-base</artifactId>
-    <version>24.05</version>
+    <version>24.06</version>
     <relativePath />
   </parent>
   <groupId>io.goobi.workflow.plugin</groupId>
-  <artifactId>plugin-step-create-structure-elements</artifactId>
+  <artifactId>plugin-metadata-create-structure-elements</artifactId>
   <packaging>pom</packaging>
   <modules>
     <module>module-base</module>
