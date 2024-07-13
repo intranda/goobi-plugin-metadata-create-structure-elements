@@ -32,7 +32,7 @@ Außerdem lässt sich definieren, wie viele Bilder dem jeweiligen Strukturelemen
 
 Die Generierung der Strukturelemente wird alle vorhandenen Elemente überschreiben.
 
-### Konfiguration
+## Konfiguration
 Die Konfiguration des Plugins erfolgt in der Datei `plugin_intranda_metadata_createStructureElements.xml` wie hier aufgezeigt:
 
 {{CONFIG_CONTENT}}

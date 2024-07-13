@@ -32,7 +32,7 @@ You can also define how many images should be assigned to the respective structu
 
 The generation of the structure elements will overwrite all existing elements.
 
-### Configuration
+## Configuration
 The plug-in is configured in the file `plugin_intranda_metadata_createStructureElements.xml` as shown here:
 
 {{CONFIG_CONTENT}}
