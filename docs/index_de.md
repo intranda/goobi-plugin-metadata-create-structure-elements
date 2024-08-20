@@ -1,7 +1,6 @@
 ---
 title: Metadatenerweiterung zur Erstellung von Strukturelementen pro Bild
 identifier: intranda_metadata_createStructureElements
-github: https://gitea.intranda.com/goobi-workflow/goobi-plugin-step-create-structure-elements
 description: Metadatenerweiterung zur Erstellung von Strukturelementen pro Bild
 published: true
 ---
@@ -33,30 +32,10 @@ Außerdem lässt sich definieren, wie viele Bilder dem jeweiligen Strukturelemen
 
 Die Generierung der Strukturelemente wird alle vorhandenen Elemente überschreiben.
 
-### Konfiguration
+## Konfiguration
 Die Konfiguration des Plugins erfolgt in der Datei `plugin_intranda_metadata_createStructureElements.xml` wie hier aufgezeigt:
 
-```xml
-<config_plugin>
-    <config>
-        <!-- To which project does the current section apply? 
-        The field can be repeated to summarize different projects. 
-        In addition, * can be used for any project -->
-        <project>*</project>
-
-        <!-- To which document type does the current section apply? 
-        The field can be repeated to summarize different types. 
-        In addition, * can be used for any type -->
-        <doctype>*</doctype>
-
-        <!-- default structure type. The value is preselected in the UI. Leave it blank if no preselection is needed -->
-        <defaultType>Chapter</defaultType>
-
-        <!-- define the default number of images, leave it blank if no default value is needed -->
-        <numberOfImagesPerElement>2</numberOfImagesPerElement>
-    </config>
-</config_plugin>
-```
+{{CONFIG_CONTENT}}
 
 Die Konfiguration lässt sich auf Projekte einschränken oder auf bestimmte Publikationstypen. Dazu können in die Felder `<project>` und `<doctype>` genutzt werden. In `<defaultType>` kann definiert werden, welches Strukturelement in der Liste bereits vorausgewählt sein soll. Wenn das hier definierte Element nicht in der Liste des aktuellen Publikationstyps existiert oder leer ist, wird kein Element vorausgewählt.
 In `<numberOfImagesPerElement>` kann außerdem ein Wert für die Anzahl der Bilder pro Strukturelement vorbelegt werden. Hierbei muss es sich um eine positive, ganze Zahl handeln. Beide Werte lassen sich vom Nutzer in der Oberfläche ändern.
