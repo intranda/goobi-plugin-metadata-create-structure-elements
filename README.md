@@ -15,8 +15,8 @@ Detail                      | Description
 **Plugin identifier**       | intranda_metadata_createStructureElements
 **Plugin type**             | metadata
 **Licence**                 | GPL 2.0 or newer
-**Documentation (German)**  | https://docs.goobi.io/workflow-plugins/v/eng/metadata/goobi-plugin-metadata-create-structure-elements
-**Documentation (English)** | https://docs.goobi.io/workflow-plugins/v/ger/metadata/goobi-plugin-metadata-create-structure-elements
+**Documentation (German)**  | https://docs.goobi.io/workflow-plugins/v/ger/metadata/goobi-plugin-metadata-create-structure-elements
+**Documentation (English)** | https://docs.goobi.io/workflow-plugins/v/eng/metadata/goobi-plugin-metadata-create-structure-elements
 
 ## Goobi details
 
