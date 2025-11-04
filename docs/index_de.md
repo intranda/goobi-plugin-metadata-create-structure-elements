@@ -3,6 +3,10 @@ title: Metadatenerweiterung zur Erstellung von Strukturelementen pro Bild
 identifier: intranda_metadata_createStructureElements
 description: Metadatenerweiterung zur Erstellung von Strukturelementen pro Bild
 published: true
+keywords:
+    - Goobi workflow
+    - Plugin
+    - Metadata Plugin
 ---
 
 ## Einführung

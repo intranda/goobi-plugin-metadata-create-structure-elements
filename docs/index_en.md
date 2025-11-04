@@ -3,6 +3,10 @@ title: Metadata extension for the creation of structural elements per image
 identifier: intranda_metadata_createStructureElements
 description: Metadata extension for the creation of structural elements per image
 published: true
+keywords:
+    - Goobi workflow
+    - Plugin
+    - Metadata Plugin
 ---
 
 ## Introduction
