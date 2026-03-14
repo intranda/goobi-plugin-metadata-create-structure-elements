@@ -24,7 +24,7 @@ Um das Plugin nutzen zu können, müssen folgende Dateien installiert werden:
 
 
 ## Überblick und Funktionsweise
-Bei diesem Plugin handelt es sich um ein sogenanntes `Metadataeditor-Plugin`. Es kann es im Metadateneditor im Menüpunkt für Plugins unter dem Namen `Strukturelemente generieren` ausgewählt werden.
+Bei diesem Plugin handelt es sich um ein sogenanntes `Metadataeditor-Plugin`. Es kann im Metadateneditor im Menüpunkt für Plugins unter dem Namen `Strukturelemente generieren` ausgewählt werden.
 
 ![Öffnen des Plugins](screen_open_de.png)
 
